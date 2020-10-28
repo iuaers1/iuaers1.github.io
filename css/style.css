@@ -63,6 +63,9 @@ body {
 }
 
 /* Theme Switcher*/
+.theme-toggle-btn{
+  color: var(--main-text-color);
+}
 
 .theme-switcher-wrapper {
   display: flex;
