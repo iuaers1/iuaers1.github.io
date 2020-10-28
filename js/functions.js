@@ -55,7 +55,7 @@ let songs = [
     artist: "artist name 4",
     songName: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Quo, soluta ?"
   },
-  
+
   {
     artist: "artist name 5",
     songName: "Testing Text"
@@ -95,18 +95,58 @@ function fill() {
     songTable.innerHTML += row;
   }
 }
-fill();
+
+// const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+
+// function switchTheme(e) {
+//     if (e.target.checked) {
+//         document.documentElement.setAttribute('data-theme', 'dark');
+//     }
+//     else {
+//         document.documentElement.setAttribute('data-theme', 'light');
+//     }    
+// }
+
+// toggleSwitch.addEventListener('change', switchTheme, false);
 
 
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
+const currentTheme = localStorage.getItem('theme');
+
+if (currentTheme) {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+
+  if (currentTheme === 'dark') {
+    toggleSwitch.checked = true;
+  }
+}
 
 function switchTheme(e) {
-    if (e.target.checked) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-    else {
-        document.documentElement.setAttribute('data-theme', 'light');
-    }    
+  if (e.target.checked) {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    localStorage.setItem('theme', 'dark');
+  }
+  else {
+    document.documentElement.setAttribute('data-theme', 'light');
+    localStorage.setItem('theme', 'light');
+  }
+  console.log("currently using: " + localStorage.getItem('theme') + " theme");
 }
 
 toggleSwitch.addEventListener('change', switchTheme, false);
+
+
+function run() {
+  console.log("site is loading");
+  try {
+    fill();
+  }
+  catch (err) {
+    console.log(err.message);
+  }
+
+  console.log("currently using: " + localStorage.getItem('theme') + " theme");
+  console.log("site has been loaded")
+}
+
+run();

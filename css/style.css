@@ -207,7 +207,7 @@ input:checked+.slider:before {
   margin-left: 30px;
   height: 50px;
   width: 150px;
-  background: var(--second-bg-color);
+  background: var(--main-bg-color);
 }
 
 .top-level-menu>li:hover {
@@ -224,13 +224,17 @@ input:checked+.slider:before {
 /* Menu Link Styles */
 
 .top-level-menu a {
-  font: bold 14px Arial, Helvetica, sans-serif;
+  font: bold 22px Arial, Helvetica, sans-serif;
   color: var(--main-text-color);
   text-decoration: none;
   padding: 0 0 0 10px;
   /* Make the link cover the entire list item-container */
   display: block;
   line-height: 30px;
+}
+
+.second-level-menu a {
+  font: bold 14px Arial, Helvetica, sans-serif;
 }
 
 .top-level-menu li:hover>a {
