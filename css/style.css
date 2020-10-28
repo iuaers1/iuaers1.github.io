@@ -1,0 +1,329 @@
+/* old color scheme
+#6bfffa
+#6dff6b
+#b7ff6b
+*/
+
+:root {
+  --main-bg-color: #ececec;
+  --second-bg-color: #c4c4c4;
+  --main-text-color: #000000;
+  --second-text-color: #FFFFFF;
+  --hover-text-color: #1d1d1d;
+  --active-text-color: #1b1b1b;
+}
+
+:root[data-theme="light"] {
+  --main-bg-color: #ececec;
+  --second-bg-color: #c4c4c4;
+  --main-text-color: #000000;
+  --second-text-color: #FFFFFF;
+  --hover-text-color: #1d1d1d;
+  --active-text-color: #1b1b1b;
+}
+
+:root[data-theme="dark"] {
+  --main-bg-color: #212121;
+  --second-bg-color: #181818;
+  --main-text-color: #ffffff;
+  --second-text-color: #7a7a7a;
+  --hover-text-color: #9a9c9e;
+  --active-text-color: #747677;
+}
+
+body {
+  margin: 0;
+  margin-top: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  background-color: var(--second-bg-color);
+}
+
+.content {
+  width: 100%;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 100px;
+  background-color: var(--main-bg-color);
+}
+
+.logo img {
+  width: 100px;
+  height: 100px;
+  background-color: var(--second-bg-color);
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
+/* Theme Switcher*/
+
+.theme-switcher-wrapper {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+/* The switch - the box around the slider */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+input:focus+.slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Theme Switcher end */
+
+/* Menu Styles */
+
+/* Third level menu start */
+
+.third-level-menu {
+  position: absolute;
+  top: 0;
+  right: -150px;
+  width: 150px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.third-level-menu>li {
+  height: 30px;
+  background: var(--main-bg-color);
+}
+
+.third-level-menu>li:hover {
+  background: var(--second-bg-color);
+  border: 1px solid;
+}
+
+/* Third level menu end */
+
+/* Second level menu start */
+
+.second-level-menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 150px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none;
+}
+
+.second-level-menu>li {
+  position: relative;
+  height: 30px;
+  background: var(--main-bg-color);
+}
+
+.second-level-menu>li:hover {
+  background: var(--second-bg-color);
+  border: 1px solid;
+}
+
+/* Second level menu end */
+
+/* First level menu start */
+
+.top-level-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.top-level-menu>li {
+  position: relative;
+  float: right;
+  margin-top: 25px;
+  margin-left: 30px;
+  height: 50px;
+  width: 150px;
+  background: var(--second-bg-color);
+}
+
+.top-level-menu>li:hover {
+  background: var(--second-bg-color);
+  border: 1px solid;
+}
+
+.top-level-menu li:hover>ul {
+  display: inline;
+}
+
+/* First level menu end */
+
+/* Menu Link Styles */
+
+.top-level-menu a {
+  font: bold 14px Arial, Helvetica, sans-serif;
+  color: var(--main-text-color);
+  text-decoration: none;
+  padding: 0 0 0 10px;
+  /* Make the link cover the entire list item-container */
+  display: block;
+  line-height: 30px;
+}
+
+.top-level-menu li:hover>a {
+  color: var(--second-text-color);
+}
+
+.expand {
+  font-size: 12px;
+  float: right;
+  margin-right: 5px;
+}
+
+/*Menu end*/
+
+.wrap {
+  width: 80%;
+  padding-bottom: 2.5rem;
+  height: 800px;
+  background-color: var(--main-bg-color);
+  margin: 0px auto;
+}
+
+.banner {
+  width: 100%;
+  height: 300px;
+  background-image: url(../img/storpush2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--main-bg-color);
+  /* display: flex; */
+}
+
+.tableList {
+  width: 90%;
+  margin: 10px auto;
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+}
+
+.tableName1 {
+  padding: 10px;
+  background-color: var(--second-bg-color);
+  /* border-radius: 8px; */
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+  color: var(--main-text-color);
+}
+
+.tableName2 {
+  padding: 10px;
+  background-color: var(--second-bg-color);
+  /* border-radius: 8px; */
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+  color: var(--main-text-color);
+}
+
+.tableData1 {
+  padding: 10px;
+  background-color: var(--second-bg-color);
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+  color: var(--main-text-color);
+}
+
+.tableData2 {
+  padding: 10px;
+  background-color: var(--second-bg-color);
+  overflow: hidden;
+  word-wrap: break-word;
+  white-space: pre-line;
+  color: var(--main-text-color);
+}
+
+#footer {
+  position: relative;
+  bottom: -12.5px;
+  width: 125%;
+  left: -12.5%;
+  height: fit-content;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
+}
+.tableContent{
+  height: fit-content;
+  background-color: var(--main-bg-color);
+}
