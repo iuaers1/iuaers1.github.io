@@ -1,4 +1,28 @@
-
+function randomSongName() {
+  let songs = [
+    "Box Of Visions",
+    "Broken Illusions",
+    "You Love Evil",
+    "The New Face Of Success",
+    "Searching For Your Reasons",
+    "Expressions Came Too Late",
+    "Bad Storm",
+    "Destruction Safari",
+    "10 Things You Didn't Know About Hope",
+    "Antique Revolt",
+    "Day Glo Force",
+    "Deadly Woman",
+    "Ancient Sins",
+    "Comfort Lessons",
+    "Random Parade",
+    "Hell... She Said",
+    "Check Out The Sunset",
+    "Bad Rider",
+    "Taming The Shadow",
+    "Understanding Accusations"
+  ];
+  return songs[Math.floor(Math.random() * songs.length)];
+}
 
 function searchFunction() {
   var found, td;
@@ -22,33 +46,30 @@ function searchFunction() {
   }
 }
 
-function fill() {
+function fill(numOfArtists = 15) {
+  try {
+    const songTable = document.getElementById("songTable");
+    console.log(songTable);
 
-  for (let i = 0; i < 15; i++) {
-    // fetch("https://randomuser.me/api", { mode: "cors" })
-    //   .then(response => response.json())
-    //   .then(characters => showCharacters(characters.results));
+    for (let i = 0; i < numOfArtists; i++) {
+      (async () => {
+        const res = await fetch(`https://www.randomuser.me/api`);
+        const data = await res.json();
+        const artist = data.results[0];
+        
+        var fullName = `${artist.name.first} ${artist.name.last}`
 
-
-    (async () => {
-      const res = await fetch(`https://www.randomuser.me/api`);
-      const data = await res.json();
-      showCharacters(data.results);
-    })();
-
-    showCharacters = characters => {
-      const charactersDiv = document.querySelector("#songTable");
-      characters.forEach(character => {
-        let row =
-          `<tr height="40px">
-          <td width="50%" nowrap="nowrap" align="left" class="tableData1">${character.name.first + " " + character.name.last}</td>
-          <td width="50%" nowrap="nowrap" align="left" class="tableData2">${character.name.first}</td>
-        </tr>`;
-
-        charactersDiv.innerHTML += row;
-        // charactersDiv.append(characterElement);
-      });
+        var row = 
+        `<tr height="40px">
+           <td width="50%" nowrap="nowrap" align="left" class="tableData1">${fullName}</td>
+           <td width="50%" nowrap="nowrap" align="left" class="tableData2">${randomSongName()}</td>
+         </tr>`;
+        songTable.innerHTML += row;
+      })();
     }
+  }
+  catch (error) {
+    console.log(error);
   }
 }
 
@@ -85,7 +106,7 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 function run() {
   console.log("site is loading");
   try {
-    fill();
+    fill(numOfCharacters = 5);
   }
   catch (err) {
     console.log(err.message);

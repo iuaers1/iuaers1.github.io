@@ -4,15 +4,16 @@
 #b7ff6b
 */
 
-:root {
+
+/* :root {
   --main-bg-color: #ececec;
   --second-bg-color: #c4c4c4;
   --main-text-color: #000000;
   --second-text-color: #FFFFFF;
   --hover-text-color: #1d1d1d;
   --active-text-color: #1b1b1b;
-}
-
+} */
+/* these two are the same*/
 :root[data-theme="light"] {
   --main-bg-color: #ececec;
   --second-bg-color: #c4c4c4;
