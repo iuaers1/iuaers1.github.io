@@ -23,7 +23,9 @@ function randomSongName() {
   ];
   return songs[Math.floor(Math.random() * songs.length)];
 }
-
+/*
+ * seach function will search the songTable for valid songs using myInput.value
+ */
 function searchFunction() {
   var found, td;
   var filter = document.getElementById("myInput").value.toUpperCase();
@@ -52,6 +54,7 @@ function fill(numOfArtists = 15) {
     console.log(songTable);
 
     for (let i = 0; i < numOfArtists; i++) {
+      /* an async lambda function to use asynchronous fetch instead of fetch().then().then() multiple request error */
       (async () => {
         const res = await fetch(`https://www.randomuser.me/api`);
         const data = await res.json();
@@ -59,6 +62,13 @@ function fill(numOfArtists = 15) {
         
         var fullName = `${artist.name.first} ${artist.name.last}`
 
+        /* creates 
+        <tbody> 
+          <tr">
+           <td>fullName</td>
+           <td>randomSongName()</td>
+         </tr>
+        </tbody>*/
         var row = 
         `<tr height="40px">
            <td width="50%" nowrap="nowrap" align="left" class="tableData1">${fullName}</td>
@@ -73,6 +83,9 @@ function fill(numOfArtists = 15) {
   }
 }
 
+/*
+ * Theme switcher
+ */
 const toggleSwitch = document.querySelector('.switch input[type="checkbox"]');
 const currentTheme = localStorage.getItem('theme');
 
@@ -103,6 +116,9 @@ function switchTheme(e) {
 toggleSwitch.addEventListener('change', switchTheme, false);
 
 
+/*
+ * run function
+ */
 function run() {
   console.log("site is loading");
   try {
