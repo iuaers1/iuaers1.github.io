@@ -4,16 +4,17 @@
 #b7ff6b
 */
 
-
-/* :root {
+:root {
   --main-bg-color: #ececec;
   --second-bg-color: #c4c4c4;
   --main-text-color: #000000;
   --second-text-color: #FFFFFF;
   --hover-text-color: #1d1d1d;
   --active-text-color: #1b1b1b;
-} */
+}
+
 /* these two are the same*/
+
 :root[data-theme="light"] {
   --main-bg-color: #ececec;
   --second-bg-color: #c4c4c4;
@@ -64,7 +65,8 @@ body {
 }
 
 /* Theme Switcher*/
-.theme-toggle-btn{
+
+.theme-toggle-btn {
   color: var(--main-text-color);
 }
 
@@ -284,7 +286,7 @@ input:checked+.slider:before {
   white-space: pre-line;
 }
 
-.tableName1 {
+.tableName {
   padding: 10px;
   background-color: var(--second-bg-color);
   /* border-radius: 8px; */
@@ -294,26 +296,7 @@ input:checked+.slider:before {
   color: var(--main-text-color);
 }
 
-.tableName2 {
-  padding: 10px;
-  background-color: var(--second-bg-color);
-  /* border-radius: 8px; */
-  overflow: hidden;
-  word-wrap: break-word;
-  white-space: pre-line;
-  color: var(--main-text-color);
-}
-
-.tableData1 {
-  padding: 10px;
-  background-color: var(--second-bg-color);
-  overflow: hidden;
-  word-wrap: break-word;
-  white-space: pre-line;
-  color: var(--main-text-color);
-}
-
-.tableData2 {
+.tableData {
   padding: 10px;
   background-color: var(--second-bg-color);
   overflow: hidden;
@@ -331,7 +314,8 @@ input:checked+.slider:before {
   background-color: var(--main-bg-color);
   color: var(--main-text-color);
 }
-.tableContent{
+
+.tableContent {
   height: fit-content;
   background-color: var(--main-bg-color);
 }

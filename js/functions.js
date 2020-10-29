@@ -48,35 +48,38 @@ function searchFunction() {
   }
 }
 
-function fill(numOfArtists = 15) {
+function fill() {
   try {
+    /*find song table*/
     const songTable = document.getElementById("songTable");
-    console.log(songTable);
 
-    for (let i = 0; i < numOfArtists; i++) {
-      /* an async lambda function to use asynchronous fetch instead of fetch().then().then() multiple request error */
-      (async () => {
-        const res = await fetch(`https://www.randomuser.me/api`);
-        const data = await res.json();
-        const artist = data.results[0];
-        
-        var fullName = `${artist.name.first} ${artist.name.last}`
+    /* an async lambda function to use asynchronous fetch instead of fetch().then().then() multiple request error */
+    (async () => {
+      const res = await fetch(`https://www.randomuser.me/api`);
+      const data = await res.json();
+      const artist = data.results[0];
 
-        /* creates 
-        <tbody> 
-          <tr">
-           <td>fullName</td>
-           <td>randomSongName()</td>
-         </tr>
-        </tbody>*/
-        var row = 
-        `<tr height="40px">
-           <td width="50%" nowrap="nowrap" align="left" class="tableData1">${fullName}</td>
-           <td width="50%" nowrap="nowrap" align="left" class="tableData2">${randomSongName()}</td>
-         </tr>`;
-        songTable.innerHTML += row;
-      })();
-    }
+      var fullName = `${artist.name.first} ${artist.name.last}`
+
+      // /* another way of adding table data*/
+      // const artistInfo = document.createElement("td");
+
+      // artistInfo.style.width = "50%";
+      // artistInfo.className = "artistInfo";
+      // artistInfo.innerText = `some info about: ${fullName}`;
+      // songTable.append(artistInfo);
+
+      
+      /* the easy way*/
+      var row =
+      `<tr height="40px" id="artistData">
+      <td width="50%" nowrap="nowrap" align="left" class="tableData">${fullName}</td>
+      <td width="50%" nowrap="nowrap" align="left" class="tableData">${randomSongName()}</td>
+      </tr>`;
+      
+      songTable.innerHTML += row;
+      
+    })();
   }
   catch (error) {
     console.log(error);
@@ -122,7 +125,9 @@ toggleSwitch.addEventListener('change', switchTheme, false);
 function run() {
   console.log("site is loading");
   try {
-    fill(numOfCharacters = 5);
+    for (let i = 0; i < 15; i++) {
+      fill();
+    }
   }
   catch (err) {
     console.log(err.message);
