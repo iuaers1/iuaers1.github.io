@@ -125,6 +125,16 @@ function switchTheme(e) {
 toggleSwitch.addEventListener('change', switchTheme, false);
 
 
+/**
+ * Login user
+ */
+
+// function login(user){
+//   let header = document.getElementById("loggedInUser");
+//   let p = `<p> Logged in user: ${user}</p>`;
+//   header.innerHTML = p;
+// }
+
 /*
  * run function
  */
