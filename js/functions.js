@@ -53,6 +53,12 @@ function fill() {
     /*find song table*/
     const songTable = document.getElementById("songTable");
 
+    // fetch("https://randomuser.me/api")
+    // .then(res => res.json())
+    // .then(r => {
+    //   console.log(r.results[0].name.first)
+    // });
+
     /* an async lambda function to use asynchronous fetch instead of fetch().then().then() multiple request error */
     (async () => {
       const res = await fetch(`https://www.randomuser.me/api`);
@@ -73,8 +79,8 @@ function fill() {
       /* the easy way*/
       var row =
       `<tr height="40px" id="artistData">
-      <td width="50%" nowrap="nowrap" align="left" class="tableData">${fullName}</td>
-      <td width="50%" nowrap="nowrap" align="left" class="tableData">${randomSongName()}</td>
+      <td width="50%" class="tableData">${fullName}</td>
+      <td width="50%" class="tableData">${randomSongName()}</td>
       </tr>`;
       
       songTable.innerHTML += row;
