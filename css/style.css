@@ -162,6 +162,7 @@ input:checked+.slider:before {
 
 .third-level-menu>li {
   height: 30px;
+  border: 1px solid var(--main-bg-color);
   background: var(--main-bg-color);
 }
 
@@ -188,6 +189,7 @@ input:checked+.slider:before {
 .second-level-menu>li {
   position: relative;
   height: 30px;
+  border: 1px solid var(--main-bg-color);
   background: var(--main-bg-color);
 }
 
@@ -200,28 +202,31 @@ input:checked+.slider:before {
 
 /* First level menu start */
 
-.top-level-menu {
+.first-level-menu {
   list-style: none;
   padding: 0;
   margin: 0;
+  /* overflow: auto; */
 }
 
-.top-level-menu>li {
+.first-level-menu>li {
   position: relative;
-  float: right;
+  float: left;
+
   margin-top: 25px;
   margin-left: 30px;
   height: 50px;
   width: 150px;
+  border: 1px solid var(--main-bg-color);
   background: var(--main-bg-color);
 }
 
-.top-level-menu>li:hover {
+.first-level-menu>li:hover {
   background: var(--second-bg-color);
   border: 1px solid;
 }
 
-.top-level-menu li:hover>ul {
+.first-level-menu li:hover>ul {
   display: inline;
 }
 
@@ -229,12 +234,11 @@ input:checked+.slider:before {
 
 /* Menu Link Styles */
 
-.top-level-menu a {
+.first-level-menu a {
   font: bold 22px Arial, Helvetica, sans-serif;
   color: var(--main-text-color);
   text-decoration: none;
   padding: 0 0 0 10px;
-  /* Make the link cover the entire list item-container */
   display: block;
   line-height: 30px;
 }
@@ -243,7 +247,7 @@ input:checked+.slider:before {
   font: bold 14px Arial, Helvetica, sans-serif;
 }
 
-.top-level-menu li:hover>a {
+.first-level-menu li:hover>a {
   color: var(--second-text-color);
 }
 
