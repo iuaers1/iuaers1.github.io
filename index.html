@@ -1,92 +1,30 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="light">
+﻿<!DOCTYPE html>
+<html>
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <script defer src="js/functions.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>Creaform</title>
+    <base href="/creaform" />
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/app.css" rel="stylesheet" />
+    <link href="_content/Blazored.Modal/blazored-modal.css" rel="stylesheet" />
+
+    <script defer src="_framework/blazor.webassembly.js"></script>
+    <script defer src="_content/Blazored.Modal/blazored.modal.js"></script>
 </head>
 
 <body>
-  <div class="content">
-    <div class="wrap">
-      <div class="header">
-        <div class="logo">
-          <a href="index.html"> 
-            <img src="img/logo.jpg" alt="logo">
-          </a>
+    <app>
+        <div class="loading-container">
+            <div class="loader"></div>
         </div>
-        <ul class="first-level-menu">
-          <li><a href="index.html">Home</a></li>
-          <li>
-            <a href="#">About<span class="expand">&raquo;</span></a>
-            <ul class="second-level-menu">
-              <li><a href="#">About website</a></li>
-              <li><a href="#">About author</a></li>
-              <li>
-                <a href="#">Social Media<span class="expand">&raquo;</span></a>
-                <ul class="third-level-menu">
-                  <li><a href="https://twitter.com">Twitter</a></li>
-                  <li><a href="https://facebook.com">Facebook</a></li>
-                  <li><a href="https://instagram.com">Instagram</a></li>
-                  <li><a href="https://google.com">Google</a></li>
-                </ul>
-              </li>
-              <li><a href="#">More Info</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Login</a></li>
-        </ul>
-        <div class="theme-switcher-wrapper">
-          <label class="switch" for="checkbox">
-            <input type="checkbox" id="checkbox">
-            <span class="slider round"></span>
-          </label>
-          <p class="theme-toggle-btn" id="theme-toggle-btn">Toggle dark mode</p>
-        </div>
-      </div>
-      <!--header end-->
-      <div class="banner"></div>
-      <div class="container">
-        <div style="height: auto;">
-          <table cellspacing="0" class="tableList">
-            <tr height="40px">
-              <td width="2%" nowrap="nowrap" align="right">
-                <input type="text" id="myInput" placeholder="Search" onkeyup="searchFunction(myInput.value)">
-              </td>
-              <td width="25%" colspan="2" nowrap="nowrap" align="left">
-                <input type="button" value="send" onclick="searchFunction(myInput.value)">
-              </td>
-            </tr>
-          </table>
-        </div>
-        <div class="tableContent">
-          <table cellspacing="0" class="tableList" id="NameTable">
-            <tr height="40px">
-              <td width="50%" nowrap="nowrap" align="left" class="tableName">Artist Name</td>
-              <td width="50%" nowrap="nowrap" align="left" class="tableName">Song</td>
-            </tr>
-          </table>
-          <table cellspacing="0" class="tableList" id="songTable">
-            <!--Example data goes here from functions.js function fill()-->
-          </table>
-        </div>
-        <footer id="footer">
-          <pre>
-            Some info about website
+    </app>
 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, aliquid iusto voluptates eum sint autem nostrum harum laborum.
-          
-            <a href="http://www.google.com" style="text-decoration: none;"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png" alt="google" width="26px" height="26px"></a><a href="http://www.twitter.com" style="text-decoration: none;"><img src="https://cdn3.iconfinder.com/data/icons/basicolor-reading-writing/24/077_twitter-512.png" alt="google" width="26px" height="26px"></a>
-            
-            <img src="img/logo.jpg" alt="logo" style="width: 10%;">
-          </pre>
-        </footer>
-      </div>
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
     </div>
-  </div>
-</body>
-
+</body> 
 </html>
